@@ -77,17 +77,17 @@
             <input type="text" id="pass" placeholder="Nhập đi...">
         </div>
         <button onclick="checkLogin()">Mở Quà ✨</button>
-        <p id="error-msg">troll?</p>
+        <p id="error-msg">Nhì lớp toán🤨🤨🤨🤨?</p>
     </div>
 
     <script>
         function checkLogin() {
             const pass = document.getElementById('pass').value;
+            const error = document.getElementById('error-msg');
             if (pass ==="c") {
                 window.location.href = "web/duong.html";
             }
             else {
-                // Nếu sai, hiện thông báo lỗi
                 error.style.display = "block";
             }
     </script>
