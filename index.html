@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lối vào bí mật - 8/3 ✨</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0); /* Màu hồng cam pastel */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .login-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 { color: #ff6b81; margin-bottom: 20px; }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label { display: block; margin-bottom: 5px; color: #555; font-size: 14px; }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box; /* Giúp padding không làm tăng chiều rộng input */
+            outline: none;
+        }
+
+        input:focus { border-color: #ff6b81; }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #ff6b81;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover { background: #ee5253; transform: scale(1.02); }
+
+        #error-msg {
+            color: #ff4757;
+            font-size: 13px;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h3>Nhóm Gươm Giữa Rừng Hoa🌹🌹🌹🌹🌹🌹🌹🌹🌹🗡🗡️️</h2>
+        <p style="color: #888; font-size: 14px;">hoặc Tổ rắn whutever...</p>
+        <div class="input-group">
+            <label>Họ và tên hoặc biệt danh</label>
+            <input type="text" id="username" placeholder="Nhập đi...">
+        </div>
+        <button onclick="checkLogin()">Mở Quà part 1 ✨</button>
+        <p id="error-msg">❌</p>
+    </div>
+
+    <script>
+        function checkLogin() {
+            const user = document.getElementById('username').value;
+            if (user === "Vũ Thùy Dương" || user === "cún") {
+                window.location.href = "duong.html";}
+            else if (user === "Dương Võ Kiều Phụng" || user === "pii") {
+                window.location.href = "phung.html";}    
+            else if (user === "Lê Nhã Quỳnh Anh" || user === "Susu") {
+                window.location.href = "quanh.html";}  
+            else if (user === "Phạm Ngô Tường Vy" || user === "thù trường") {
+                window.location.href = "vy.html";}
+            else if (user === "Hồ Quỳnh Hương" || user === "Phúc") {
+                window.location.href = "huong.html";}
+            else if (user === "Phạm Ngọc Nguyên Phương" || user === "di") {
+                window.location.href = "phuong.html";}
+            else if (user === "Trần Ngọc Trúc Anh" || user === "thù") {
+                window.location.href = "tanh.html";
+            } else {
+                error.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
