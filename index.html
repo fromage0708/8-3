@@ -76,12 +76,13 @@
             <input type="text" id="username" placeholder="Nhập đi...">
         </div>
         <button onclick="checkLogin()">Mở Quà part 1 ✨</button>
-        <p id="error-msg">Who?❌</p>
+        <p id="error-msg">M là ai? Con bà nào? Sao vào được web này❌</p>
     </div>
 
     <script>
         function checkLogin() {
             const user = document.getElementById('username').value;
+            const error = document.getElementById('error-msg');
             if (user === "Vũ Thùy Dương" || user === "cún") {
                 window.location.href = "pass/duong.html";}
             else if (user === "Dương Võ Kiều Phụng" || user === "pii") {
