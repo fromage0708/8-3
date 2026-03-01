@@ -77,7 +77,7 @@
             <input type="text" id="pass" placeholder="Nhập đi...">
         </div>
         <button onclick="checkLogin()">Mở Quà ✨</button>
-        <p id="error-msg">❌</p>
+        <p id="error-msg">troll?</p>
     </div>
 
     <script>
@@ -85,7 +85,11 @@
             const pass = document.getElementById('pass').value;
             if (pass ==="c") {
                 window.location.href = "web/duong.html";
-        }
+            }
+            } else {
+                // Nếu sai, hiện thông báo lỗi
+                error.style.display = "block";
+            }
     </script>
 
 </body>
