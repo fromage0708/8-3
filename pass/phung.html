@@ -84,7 +84,7 @@
     function checkLogin() {
         const pass = document.getElementById('pass').value;
         const error = document.getElementById('error-msg');
-        if (pass === "vì họ có dốc" && pass === "có dốc" && pass === "có nhiều dốc" && pass === "vì họ có joke") {
+        if (pass === "vì họ có dốc" || pass === "có dốc" || pass === "có nhiều dốc" || pass === "vì họ có joke") {
             window.location.href = "web/phung.html";
         }
         else {
