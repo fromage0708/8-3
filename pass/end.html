@@ -98,7 +98,17 @@
 </head>
 <body>
     <div class="bg-container" id="bg"></div>
+    <div class="bg-container" id="bg"></div>
 
+    <div class="content">
+        <button class="nav-btn prev" onclick="changeContent(-1)">❮</button>
+        
+        <h1 class="wish-text" id="wish-display">
+            Chúc mừng ngày Quốc tế Phụ nữ 8/3! 🌹
+        </h1>
+
+        <button class="nav-btn next" onclick="changeContent(1)">❯</button>
+    </div>
     <script>
         // Danh sách ảnh và lời chúc tương ứng
         const data = [
@@ -139,7 +149,7 @@
             
             setTimeout(() => {
                 // Cập nhật ảnh nền (giữ nguyên lớp gradient đen)
-                bg.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), url('${data[index].img}')`;
+                bg.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), url('5.jpg}')`;
                 
                 // Cập nhật chữ
                 text.innerText = data[index].text;
