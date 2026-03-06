@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời Chúc 8/3 ✨</title>
+    <style>
+        /* Loại bỏ lề mặc định và làm tràn trang */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden; /* Không cho cuộn trang */
+        }
+
+        /* Khung chứa ảnh nền và lớp phủ đen dần */
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Thay bai2.jpg bằng đường dẫn ảnh của bạn */
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), url('bai2.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            transition: background-image 0.8s ease-in-out;
+        }
+
+        /* Cấu trúc hiển thị chữ chiếm cả trang */
+        .content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .wish-text {
+            font-size: 2.5rem; /* Chữ rất to */
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            max-width: 800px;
+            line-height: 1.4;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        /* Nút mũi tên điều hướng */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            backdrop-filter: blur(5px); /* Làm mờ nút bấm cho sang */
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .prev { left: 20px; }
+        .next { right: 20px; }
+
+        /* Tối ưu cho điện thoại */
+        @media (max-width: 768px) {
+            .wish-text {
+                font-size: 1.5rem; /* Thu nhỏ chữ một chút trên mobile để không tràn */
+            }
+            .nav-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <audio id="bg-music" loop>
+    <source src="Bút Chì Bạc.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ phát âm thanh.
+  </audio>
+
+  <button onclick="toggleMusic()" style="position: fixed; bottom: 20px; right: 20px; z-index: 100; background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
+      🎵
+  </button>
+    <div class="bg-container" id="bg"></div>
+
+    <div class="content">
+        <button class="nav-btn prev" onclick="changeContent(-1)">❮</button>
+        
+        <h1 class="wish-text" id="wish-display">
+            Chúc mừng ngày Quốc tế Phụ nữ 8/3! 🌹
+        </h1>
+
+        <button class="nav-btn next" onclick="changeContent(1)">❯</button>
+    </div>
+
+    <script>
+        // Danh sách ảnh và lời chúc tương ứng
+        const data = [
+            {
+                img: "6.jpg",
+                text: "LỜI GỬI CỦA 2 THẰNG ĐỰC RỰA TRONG NHÓM 🐵🐵"
+            },
+            {
+                img: "1.jpg",
+                text: "Nhân dịp 8/3🌹"
+            },
+            {
+                img: "2.jpg",
+                text: "Bọn tui xin chúc ❤️"
+            }
+            {
+                img: "3.jpg",
+                text: "các bạn nữ trong team luôn rạng rỡ và xinh đẹp như những đóa hoa ❤️"
+            }
+            {
+                img: "4.jpg",
+                text: "Hạnh phúc và đạt được nguyện vọng mà các bạn mong ước nha ❤️"
+            }
+        ];
+
+        let index = 0;
+
+        function changeContent(step) {
+            index += step;
+            if (index >= data.length) index = 0;
+            if (index < 0) index = data.length - 1;
+
+            const bg = document.getElementById('bg');
+            const text = document.getElementById('wish-display');
+
+            // Cập nhật nội dung với hiệu ứng mờ dần
+            text.style.opacity = 0;
+            
+            setTimeout(() => {
+                // Cập nhật ảnh nền (giữ nguyên lớp gradient đen)
+                bg.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), url('${data[index].img}')`;
+                
+                // Cập nhật chữ
+                text.innerText = data[index].text;
+                text.style.opacity = 1;
+            }, 300);
+        }
+    </script>
+</body>
+</html>
