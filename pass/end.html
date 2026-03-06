@@ -26,7 +26,7 @@
             width: 100%;
             height: 100%;
             /* Thay bai2.jpg bằng đường dẫn ảnh của bạn */
-            background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), url('bai2.jpg');
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), url('5.jpg');
             background-size: cover;
             background-position: center;
             z-index: -1;
@@ -149,7 +149,7 @@
             
             setTimeout(() => {
                 // Cập nhật ảnh nền (giữ nguyên lớp gradient đen)
-                bg.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), url('5.jpg}')`;
+                bg.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), url('${data[index].img}')`;
                 
                 // Cập nhật chữ
                 text.innerText = data[index].text;
